@@ -129,6 +129,7 @@ class github_serch:
                 print("邮件发送成功")
             except Exception as err:
                 print(err)
+                
     def run(self):
         g.login_github()
         g.send_mail()
