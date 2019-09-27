@@ -41,7 +41,7 @@ class github_serch:
             #发送数据并登陆
             s.post(session_url,data=user_data)
             s.get('https://github.com/settings/profile')
-            print("登录Github成功,正在检索关键字genilex")
+            print("登录Github成功,正在检索关键字gen")
             #keyword = input("输入搜索关键字:")
             sleep(3)
             global n
@@ -52,8 +52,8 @@ class github_serch:
             writer.writerow(['url',"upload time","username/entry name","filename"])
             f1 = open('上传时间.txt', 'w')
             for page in range(1,3): #检索1到3页匹配关键词的结果
-                #search_code ="https://github.com/search?q=genilex&type=Code"
-                search_code = "https://github.com/search?p="+str(page)+"&q=genilex&type=Code"
+                #search_code ="https://github.com/search?q=gen&type=Code"
+                search_code = "https://github.com/search?p="+str(page)+"&q=gen&type=Code"
                 resp = s.get(search_code)
                 #print(resp)
                 results_code = resp.text
@@ -90,7 +90,7 @@ class github_serch:
         username = ''
         password = ''
         sender = ''
-        receiver = ["","jianghuibai@genilex.com"]
+        receiver = ["","jianghuibai@gen.com"]
         for ff in f2: #检索上传时间
             if str1 in ff:
                 n1 = + 1
@@ -104,7 +104,7 @@ class github_serch:
                 att1["Content-Type"] = 'application/octet-stream'
                 att1.add_header('Content-Disposition', 'attachment', filename='fujian.csv')
                 msg.attach(
-                    MIMEText("Dear all: \r\n\r\n"+str(date)+" 检测关键字genilex,Github检测到上传代码"+str(n)+"个,未发现新上传代码，详见附件\r\n\r\n"))
+                    MIMEText("Dear all: \r\n\r\n"+str(date)+" 检测关键字gen,Github检测到上传代码"+str(n)+"个,未发现新上传代码，详见附件\r\n\r\n"))
                 msg.attach(att1)
                 smtp = smtplib.SMTP()
                 smtp.connect('partner.outlook.cn')
@@ -126,7 +126,7 @@ class github_serch:
                 att1["Content-Type"] = 'application/octet-stream'
                 att1.add_header('Content-Disposition', 'attachment', filename='fujian.csv')
                 msg.attach(
-                    MIMEText("Dear all: \r\n\r\n" + str(date) + " 检测关键字genilex,发现新上传代码，Github检测到新上传代码" + str(
+                    MIMEText("Dear all: \r\n\r\n" + str(date) + " 检测关键字gen,发现新上传代码，Github检测到新上传代码" + str(
                         n1) + "个,详见附件\r\n\r\n"))
                 msg.attach(att1)
                 smtp = smtplib.SMTP()
