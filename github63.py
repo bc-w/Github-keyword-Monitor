@@ -16,7 +16,7 @@ class github_serch:
     def __init__(self):
         pass
 
-    def login_github(self,username="bc-w",password="bpsb-2006"):#登陆Github
+    def login_github(self,username="bc-w",password=""):#登陆Github
         #初始化参数
         login_url = 'https://github.com/login'
         session_url = 'https://github.com/session'
@@ -89,7 +89,7 @@ class github_serch:
         n1 = 0
         date = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
         username = 'wang@gx.com' #邮件地址
-        password = 'jllx@2020'#邮件密码
+        password = ''#邮件密码
         sender = 'wang@gx.com'
         receiver = ["wang@gx.com"]
         receiver1 = ["wang@gx.com","jiang@gx.com"]
