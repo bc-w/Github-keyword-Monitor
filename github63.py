@@ -92,7 +92,7 @@ class github_serch:
         password = ''#邮件密码
         sender = 'wang@gx.com'
         receiver = ["wang@gx.com"]
-        receiver1 = ["wang@gx.com","jiang@gx.com"]
+        receiver1 = ["wang@gx.com","ji@gx.com"]
         now_time = time.time() #获取当前时间戳
         time1 = now_time - (72*3600) #前推72小时
         for ff in f2: #检索上传时间
